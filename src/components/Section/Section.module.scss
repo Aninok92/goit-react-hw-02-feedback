@@ -1,6 +1,9 @@
 .section {
   width: 500px;
-  margin: 0 auto;
+  margin: 0 auto 10px;
+  border: 1px solid var(--black-color);
+  padding: 20px;
+  background: var(--linear-gradient);
 }
 
 .title {
