@@ -1,0 +1,14 @@
+@import "styles/shared.module.scss";
+@import "styles/button.module.scss";
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.feedbackButton {
+  @extend .button;
+  &:not(:last-child) {
+    margin-right: 15px;
+  }
+}
