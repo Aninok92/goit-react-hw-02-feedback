@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import s from "./FeedbackOptions.module.scss";
 
 const FeedbackOptions = ({ options, onLeaveFeedback }) => (
@@ -14,5 +15,16 @@ const FeedbackOptions = ({ options, onLeaveFeedback }) => (
     ))}
   </div>
 );
+
+FeedbackOptions.propTypes = {
+  onLeaveFeedback: PropTypes.func.isRequired,
+  contacts: PropTypes.arrayOf(
+    PropTypes.shape({
+      good: PropTypes.string,
+      neutral: PropTypes.string,
+      bad: PropTypes.string,
+    })
+  ),
+};
 
 export default FeedbackOptions;

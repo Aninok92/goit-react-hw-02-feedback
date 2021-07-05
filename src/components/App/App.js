@@ -1,4 +1,3 @@
-//import "./App.css";
 import React, { Component } from "react";
 import FeedbackOptions from "../FeedbackOptions/FeedbackOptions";
 import Statistics from "../Statistics/Statistics";
@@ -13,23 +12,7 @@ export class App extends Component {
     bad: 0,
   };
   leaveFeedback = (option) => {
-    this.setState((prevState) => {
-      if (option === "good") {
-        return {
-          good: prevState.good + 1,
-        };
-      }
-      if (option === "neutral") {
-        return {
-          neutral: prevState.neutral + 1,
-        };
-      }
-      if (option === "bad") {
-        return {
-          bad: prevState.bad + 1,
-        };
-      }
-    });
+    this.setState((prevState) => ({ [option]: prevState[option] + 1 }));
   };
 
   countTotalFeedback = () => {
@@ -56,7 +39,7 @@ export class App extends Component {
           <FeedbackOptions
             options={Object.keys(this.state)}
             onLeaveFeedback={this.leaveFeedback}
-          ></FeedbackOptions>
+          />
         </Section>
         <Section title={"Statistics"}>
           {isFeedBack ? (
